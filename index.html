@@ -113,7 +113,7 @@
             if (chart) chart.destroy();
             let html = `証券コード: ${result["証券コード"]} <br> 企業名: ${result["企業名"]} <br> 業種: ${result["業種"]}`;
             const map_url = "https://ueno2025.github.io/company_address/?code=" + result["証券コード"];
-            const reverse_url = "https://ueno2025.github.io/reverse_cliants/?code=" + result["証券コード"];
+            const reverse_url = "https://ueno2025.github.io/reverse_clients/?code=" + result["証券コード"];
             html += `<br> <a href="${map_url}" target="_blank">所在地の場所を検索</a>`;
             html += `<br> <a href="${reverse_url}" target="_blank">${result["企業名"]}への主要取引先を検索</a>`;
 
