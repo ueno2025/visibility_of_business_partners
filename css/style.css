@@ -1,1 +1,11 @@
+#chartContainer {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  margin: auto;
+}
 
+#myChart {
+  width: 100% !important;
+  height: auto !important;
+}
