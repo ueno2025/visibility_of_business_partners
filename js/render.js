@@ -1,4 +1,4 @@
-import {display_partner} from './display_partner.js';
+import { display_partner } from './display_partner.js';
 
 export async function render_data(company, input_word) {
 
@@ -8,13 +8,18 @@ export async function render_data(company, input_word) {
     }
     // 部分一致 
     else {
+        if (company.data.length === 0) {
+            listDiv.innerHTML = `<p>「${input_word}」に一致する候補はありません。</p>`;
+            return;
+        }
+
         const listDiv = document.getElementById("candidates");
         listDiv.innerHTML = `<p>「${input_word}」に一致する候補:</p><ul></ul>`;
         const ul = document.querySelector("ul");
         company.data.forEach(c => {
             const li = document.createElement("li");
             li.textContent = `証券コード: ${c["証券コード"]} - ${c["企業名"]} (${c["業種"]}) `;
-            
+
             const btn = document.createElement("button");
             btn.textContent = "確認";
             btn.addEventListener("click", () => display(c));
@@ -46,5 +51,5 @@ async function display(company) {
 
     // URLの?code=を証券コードに置き換える
     const newUrl = `${window.location.pathname}?code=${company["証券コード"]}`;
-    window.history.pushState({companyCode: company["証券コード"]}, "", newUrl);
+    window.history.pushState({ companyCode: company["証券コード"] }, "", newUrl);
 }
