@@ -8,12 +8,13 @@ export async function render_data(company, input_word) {
     }
     // 部分一致 
     else {
+        const listDiv = document.getElementById("candidates");
+
         if (company.data.length === 0) {
             listDiv.innerHTML = `<p>「${input_word}」に一致する候補はありません。</p>`;
             return;
         }
-
-        const listDiv = document.getElementById("candidates");
+        
         listDiv.innerHTML = `<p>「${input_word}」に一致する候補:</p><ul></ul>`;
         const ul = document.querySelector("ul");
         company.data.forEach(c => {
