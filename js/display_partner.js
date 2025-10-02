@@ -17,7 +17,8 @@ export async function display_partner(company) {
         const ul = document.createElement("ul");
         business_partners.forEach(element => {
             let li = document.createElement("li");
-            li.innerHTML = `${element["取引先名"]} - 金額:${element["金額"]}&nbsp;&nbsp;&nbsp;割合:${element["割合"]}%`
+            li.innerHTML = `<a href="https://ueno2025.github.io/reverse_clients/?code=${element["取引先名"]}" target="_blank" rel="noopener noreferrer">
+                            ${element["取引先名"]} - 金額:${element["金額"]}&nbsp;&nbsp;&nbsp;割合:${element["割合"]}%`;
             ul.appendChild(li);
         });
         text_resultDiv.appendChild(ul);
