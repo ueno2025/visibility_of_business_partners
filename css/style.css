@@ -9,3 +9,11 @@
   width: 100% !important;
   height: auto !important;
 }
+
+
+.partner_url {
+  color: inherit;
+  /* 周りのテキストと同じ色にする */
+  text-decoration: none;
+  /* 下線を消す */
+}
